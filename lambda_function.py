@@ -35,7 +35,7 @@ def lambda_handler():
     )
     
     # Query Postgres into Dataframe
-    dataframepg = pd.read_sql(sql_query, postgres_conn)
+    dataframepg = pd.read_sql(f"{sql_query}", postgres_conn)
 
     # Write data to Snowflake
     engine = create_engine(conn_string)
